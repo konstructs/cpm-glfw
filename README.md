@@ -1,8 +1,6 @@
 cpm-glfw
 ========
 
-[![Build Status](https://travis-ci.org/iauns/cpm-glfw.png)](https://travis-ci.org/iauns/cpm-glfw)
-
 CPM module for GLFW. See: http://www.glfw.org
 
 Usage
