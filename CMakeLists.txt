@@ -6,6 +6,8 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 set(CPM_MODULE_NAME glfw)
 set(CPM_LIB_TARGET_NAME ${CPM_MODULE_NAME})
 
+cmake_policy(SET CMP0002 OLD)
+
 if ((DEFINED CPM_DIR) AND (DEFINED CPM_UNIQUE_ID) AND (DEFINED CPM_TARGET_NAME))
   set(CPM_LIB_TARGET_NAME ${CPM_TARGET_NAME})
   set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CPM_DIR})
@@ -48,8 +50,7 @@ CPM_EnsureRepoIsCurrent(
   USE_CACHING TRUE
   )
 
-add_subdirectory(${GLFW_DIR})
+add_subdirectory(${GLFW_DIR} EXCLUDE_FROM_ALL)
 
 CPM_ExportAdditionalIncludeDir("${GLFW_DIR}/include")
 CPM_ExportAdditionalLibraryTarget(glfw ${GLFW_LIBRARIES})
-
